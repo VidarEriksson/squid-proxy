@@ -1,0 +1,9 @@
+services:
+  squid:
+    image: docker.io/ubuntu/squid:latest
+    container_name: squid
+    ports:
+      - "3128:3128"
+    volumes:
+      - ./data/squid.conf:/etc/squid/squid.conf:ro
+    restart: unless-stopped
